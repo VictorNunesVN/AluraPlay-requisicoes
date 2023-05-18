@@ -1,10 +1,10 @@
-import { conectaApi } from "./conectaApi"
+import { conectaApi } from "./conectaApi.js"
 
-const dataLista = document.queySelector("[dataLista]")
+const dataLista = document.querySelector("[dataLista]")
 
 function constroiCard() {
     const video = document.createElement('li')
-    video.className('video_item')
+    video.className = 'video_item'
     video.innerHTML =
         `
 <iframe width="100%" height="72%" src="https://www.youtube.com/embed/pA-EgOaF23I"
@@ -24,3 +24,5 @@ function constroiCard() {
 async function listaVideo(){
     const lista = await conectaApi.listaVideos()
 }
+
+constroiCard()
