@@ -1,13 +1,13 @@
 async function listaVideos() {
-    const conexao = await fetch("http://127.0.0.1:3000/videos")
-    const conexaoConvertida = await conexao.json()
-    return conexaoConvertida
+    const conexao = await fetch("http://127.0.0.1:3000/videos");
+    const conexaoConvertida = await conexao.json();
 
+    return conexaoConvertida;
 }
 
 async function criaVideo(titulo, descricao, url, imagem) {
-    const conexao = await fetch("https:\\localhost:3000\videos", {
-        method: 'POST',
+    const conexao = await fetch("http://127.0.0.1:3000/videos", {
+        method: "POST",
         headers: {
             "Content-type": "application/json"
         },
@@ -17,13 +17,12 @@ async function criaVideo(titulo, descricao, url, imagem) {
             url: url,
             imagem: imagem
         })
-    })
+    });
 
-    const conexaoConvertida = await conexao.json();
-    return conexaoConvertida
+    const conexaoConvertida = conexao.json();
+
+    return conexaoConvertida;
 }
-
-
 
 export const conectaApi = {
     listaVideos,
