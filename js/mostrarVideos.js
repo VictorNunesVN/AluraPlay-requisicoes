@@ -1,8 +1,9 @@
 import { conectaApi } from "./conectaApi.js"
 
+
 const lista = document.querySelector("[data-lista]")
 
-function constroiCard(titulo, descricao, url, imagem) {
+export default function constroiCard(titulo, descricao, url, imagem) {
     /*
     obs: os parâmentros dentro da função constroiCard() devem está na mesma ordem que os qua estão na função constroiCard() na função listaVideos()
     constroiCard(titulo, descricao, url, imagem)
